@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960195891A93105800B8ED89 /* AddNewPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960195881A93105800B8ED89 /* AddNewPurchaseViewController.m */; };
+		9601958C1A934DC600B8ED89 /* CardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601958B1A934DC600B8ED89 /* CardViewController.m */; };
+		9601958F1A934DEB00B8ED89 /* AddCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601958E1A934DEB00B8ED89 /* AddCardViewController.m */; };
+		960195951A93526B00B8ED89 /* AddReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960195941A93526B00B8ED89 /* AddReceiverViewController.m */; };
+		9603B9161A9F5B33004F9BFA /* ReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960195911A93525200B8ED89 /* ReceiverViewController.m */; };
+		9632B9991A92FC0B00571DE3 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632B9981A92FC0B00571DE3 /* PurchaseViewController.m */; };
+		9632B99C1A93003600571DE3 /* TableViewCellPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9632B99B1A93003600571DE3 /* TableViewCellPurchase.m */; };
+		9635BA711B35539000D220E8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9635BA701B35539000D220E8 /* Security.framework */; };
+		9635BA731B3553A400D220E8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9635BA721B3553A400D220E8 /* MobileCoreServices.framework */; };
+		9635BA821B35E19400D220E8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9635BA811B35E19400D220E8 /* SystemConfiguration.framework */; };
 		963DB6C91A92160100B72CA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DB6C81A92160100B72CA5 /* main.m */; };
 		963DB6CC1A92160100B72CA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DB6CB1A92160100B72CA5 /* AppDelegate.m */; };
 		963DB6CF1A92160100B72CA5 /* PurchaseD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 963DB6CD1A92160100B72CA5 /* PurchaseD.xcdatamodeld */; };
-		963DB6D21A92160100B72CA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DB6D11A92160100B72CA5 /* ViewController.m */; };
 		963DB6D51A92160100B72CA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 963DB6D31A92160100B72CA5 /* Main.storyboard */; };
 		963DB6D71A92160100B72CA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 963DB6D61A92160100B72CA5 /* Images.xcassets */; };
 		963DB6DA1A92160100B72CA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963DB6D81A92160100B72CA5 /* LaunchScreen.xib */; };
 		963DB6E61A92160100B72CA5 /* PurchaseDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DB6E51A92160100B72CA5 /* PurchaseDTests.m */; };
+		96C021CE1AA6FAC800010666 /* UpdateReceiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C021CD1AA6FAC800010666 /* UpdateReceiverViewController.m */; };
+		96F6BEB71B36FE2B00CDB62B /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F6BEB01B36FDF400CDB62B /* libGTLTouchStaticLib.a */; };
+		96F6BEB91B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F6BEB81B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib */; };
+		96F6BEBC1B36FE7600CDB62B /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F6BEBA1B36FE7600CDB62B /* GTLDrive_Sources.m */; };
+		96F6BEBD1B36FE9100CDB62B /* GTMOAuth2ViewTouch.xib in Sources */ = {isa = PBXBuildFile; fileRef = 96F6BEB81B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,23 +39,80 @@
 			remoteGlobalIDString = 963DB6C21A92160100B72CA5;
 			remoteInfo = PurchaseD;
 		};
+		96F6BEAD1B36FDF400CDB62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
+			remoteInfo = GTLFramework;
+		};
+		96F6BEAF1B36FDF400CDB62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027C11A4CA2F00BEB470;
+			remoteInfo = GTLTouchStaticLib;
+		};
+		96F6BEB11B36FDF400CDB62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
+			remoteInfo = GTLUnitTests;
+		};
+		96F6BEB31B36FDF400CDB62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
+			remoteInfo = DevelopmentTestTool;
+		};
+		96F6BEB51B36FE2400CDB62B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F1C6E0E1027B3CE00B46459;
+			remoteInfo = GTLTouchStaticLib;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		960195871A93105800B8ED89 /* AddNewPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewPurchaseViewController.h; sourceTree = "<group>"; };
+		960195881A93105800B8ED89 /* AddNewPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewPurchaseViewController.m; sourceTree = "<group>"; };
+		9601958A1A934DC600B8ED89 /* CardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardViewController.h; sourceTree = "<group>"; };
+		9601958B1A934DC600B8ED89 /* CardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardViewController.m; sourceTree = "<group>"; };
+		9601958D1A934DEB00B8ED89 /* AddCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCardViewController.h; sourceTree = "<group>"; };
+		9601958E1A934DEB00B8ED89 /* AddCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCardViewController.m; sourceTree = "<group>"; };
+		960195901A93525200B8ED89 /* ReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiverViewController.h; sourceTree = "<group>"; };
+		960195911A93525200B8ED89 /* ReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiverViewController.m; sourceTree = "<group>"; };
+		960195931A93526B00B8ED89 /* AddReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReceiverViewController.h; sourceTree = "<group>"; };
+		960195941A93526B00B8ED89 /* AddReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReceiverViewController.m; sourceTree = "<group>"; };
+		9632B9971A92FC0B00571DE3 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PurchaseViewController.h; path = ../PurchaseViewController.h; sourceTree = "<group>"; };
+		9632B9981A92FC0B00571DE3 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PurchaseViewController.m; path = ../PurchaseViewController.m; sourceTree = "<group>"; };
+		9632B99A1A93003600571DE3 /* TableViewCellPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellPurchase.h; sourceTree = "<group>"; };
+		9632B99B1A93003600571DE3 /* TableViewCellPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCellPurchase.m; sourceTree = "<group>"; };
+		9635BA701B35539000D220E8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9635BA721B3553A400D220E8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9635BA811B35E19400D220E8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		963DB6C31A92160100B72CA5 /* PurchaseD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PurchaseD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		963DB6C71A92160100B72CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		963DB6C81A92160100B72CA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		963DB6CA1A92160100B72CA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		963DB6CB1A92160100B72CA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		963DB6CE1A92160100B72CA5 /* PurchaseD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PurchaseD.xcdatamodel; sourceTree = "<group>"; };
-		963DB6D01A92160100B72CA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		963DB6D11A92160100B72CA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		963DB6D41A92160100B72CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		963DB6D61A92160100B72CA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		963DB6D91A92160100B72CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		963DB6DF1A92160100B72CA5 /* PurchaseDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurchaseDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963DB6E41A92160100B72CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		963DB6E51A92160100B72CA5 /* PurchaseDTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseDTests.m; sourceTree = "<group>"; };
+		964BA9C21A9B1017004F6585 /* PurchaseD 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PurchaseD 2.xcdatamodel"; sourceTree = "<group>"; };
+		96C021CC1AA6FAC800010666 /* UpdateReceiverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateReceiverViewController.h; sourceTree = "<group>"; };
+		96C021CD1AA6FAC800010666 /* UpdateReceiverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateReceiverViewController.m; sourceTree = "<group>"; };
+		96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTL.xcodeproj; path = "../../GoogleDriveAPI 2/Source/GTL.xcodeproj"; sourceTree = "<group>"; };
+		96F6BEB81B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		96F6BEBA1B36FE7600CDB62B /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLDrive_Sources.m; sourceTree = "<group>"; };
+		96F6BEBB1B36FE7600CDB62B /* GTLDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLDrive.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +120,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F6BEB71B36FE2B00CDB62B /* libGTLTouchStaticLib.a in Frameworks */,
+				9635BA821B35E19400D220E8 /* SystemConfiguration.framework in Frameworks */,
+				9635BA731B3553A400D220E8 /* MobileCoreServices.framework in Frameworks */,
+				9635BA711B35539000D220E8 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +140,9 @@
 		963DB6BA1A92160100B72CA5 = {
 			isa = PBXGroup;
 			children = (
+				9635BA811B35E19400D220E8 /* SystemConfiguration.framework */,
+				9635BA721B3553A400D220E8 /* MobileCoreServices.framework */,
+				9635BA701B35539000D220E8 /* Security.framework */,
 				963DB6C51A92160100B72CA5 /* PurchaseD */,
 				963DB6E21A92160100B72CA5 /* PurchaseDTests */,
 				963DB6C41A92160100B72CA5 /* Products */,
@@ -85,8 +163,23 @@
 			children = (
 				963DB6CA1A92160100B72CA5 /* AppDelegate.h */,
 				963DB6CB1A92160100B72CA5 /* AppDelegate.m */,
-				963DB6D01A92160100B72CA5 /* ViewController.h */,
-				963DB6D11A92160100B72CA5 /* ViewController.m */,
+				96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */,
+				9632B9971A92FC0B00571DE3 /* PurchaseViewController.h */,
+				9632B9981A92FC0B00571DE3 /* PurchaseViewController.m */,
+				9632B99A1A93003600571DE3 /* TableViewCellPurchase.h */,
+				9632B99B1A93003600571DE3 /* TableViewCellPurchase.m */,
+				960195871A93105800B8ED89 /* AddNewPurchaseViewController.h */,
+				960195881A93105800B8ED89 /* AddNewPurchaseViewController.m */,
+				9601958A1A934DC600B8ED89 /* CardViewController.h */,
+				9601958B1A934DC600B8ED89 /* CardViewController.m */,
+				9601958D1A934DEB00B8ED89 /* AddCardViewController.h */,
+				9601958E1A934DEB00B8ED89 /* AddCardViewController.m */,
+				960195901A93525200B8ED89 /* ReceiverViewController.h */,
+				960195911A93525200B8ED89 /* ReceiverViewController.m */,
+				960195931A93526B00B8ED89 /* AddReceiverViewController.h */,
+				960195941A93526B00B8ED89 /* AddReceiverViewController.m */,
+				96C021CC1AA6FAC800010666 /* UpdateReceiverViewController.h */,
+				96C021CD1AA6FAC800010666 /* UpdateReceiverViewController.m */,
 				963DB6D31A92160100B72CA5 /* Main.storyboard */,
 				963DB6D61A92160100B72CA5 /* Images.xcassets */,
 				963DB6D81A92160100B72CA5 /* LaunchScreen.xib */,
@@ -100,6 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				963DB6C71A92160100B72CA5 /* Info.plist */,
+				96F6BEBA1B36FE7600CDB62B /* GTLDrive_Sources.m */,
+				96F6BEBB1B36FE7600CDB62B /* GTLDrive.h */,
+				96F6BEB81B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib */,
 				963DB6C81A92160100B72CA5 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -122,6 +218,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		96F6BEA71B36FDF400CDB62B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96F6BEAE1B36FDF400CDB62B /* GTL.framework */,
+				96F6BEB01B36FDF400CDB62B /* libGTLTouchStaticLib.a */,
+				96F6BEB21B36FDF400CDB62B /* GTLUnitTests.xctest */,
+				96F6BEB41B36FDF400CDB62B /* DevelopmentTestTool */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +243,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				96F6BEB61B36FE2400CDB62B /* PBXTargetDependency */,
 			);
 			name = PurchaseD;
 			productName = PurchaseD;
@@ -189,6 +297,12 @@
 			mainGroup = 963DB6BA1A92160100B72CA5;
 			productRefGroup = 963DB6C41A92160100B72CA5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96F6BEA71B36FDF400CDB62B /* Products */;
+					ProjectRef = 96F6BEA61B36FDF400CDB62B /* GTL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				963DB6C21A92160100B72CA5 /* PurchaseD */,
@@ -197,11 +311,43 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		96F6BEAE1B36FDF400CDB62B /* GTL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTL.framework;
+			remoteRef = 96F6BEAD1B36FDF400CDB62B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96F6BEB01B36FDF400CDB62B /* libGTLTouchStaticLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGTLTouchStaticLib.a;
+			remoteRef = 96F6BEAF1B36FDF400CDB62B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96F6BEB21B36FDF400CDB62B /* GTLUnitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GTLUnitTests.xctest;
+			remoteRef = 96F6BEB11B36FDF400CDB62B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96F6BEB41B36FDF400CDB62B /* DevelopmentTestTool */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DevelopmentTestTool;
+			remoteRef = 96F6BEB31B36FDF400CDB62B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		963DB6C11A92160100B72CA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F6BEB91B36FE6200CDB62B /* GTMOAuth2ViewTouch.xib in Resources */,
 				963DB6D51A92160100B72CA5 /* Main.storyboard in Resources */,
 				963DB6DA1A92160100B72CA5 /* LaunchScreen.xib in Resources */,
 				963DB6D71A92160100B72CA5 /* Images.xcassets in Resources */,
@@ -223,8 +369,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				963DB6CC1A92160100B72CA5 /* AppDelegate.m in Sources */,
+				9603B9161A9F5B33004F9BFA /* ReceiverViewController.m in Sources */,
+				9632B9991A92FC0B00571DE3 /* PurchaseViewController.m in Sources */,
+				9601958C1A934DC600B8ED89 /* CardViewController.m in Sources */,
+				960195951A93526B00B8ED89 /* AddReceiverViewController.m in Sources */,
+				96C021CE1AA6FAC800010666 /* UpdateReceiverViewController.m in Sources */,
+				9632B99C1A93003600571DE3 /* TableViewCellPurchase.m in Sources */,
+				9601958F1A934DEB00B8ED89 /* AddCardViewController.m in Sources */,
+				96F6BEBD1B36FE9100CDB62B /* GTMOAuth2ViewTouch.xib in Sources */,
 				963DB6C91A92160100B72CA5 /* main.m in Sources */,
-				963DB6D21A92160100B72CA5 /* ViewController.m in Sources */,
+				96F6BEBC1B36FE7600CDB62B /* GTLDrive_Sources.m in Sources */,
+				960195891A93105800B8ED89 /* AddNewPurchaseViewController.m in Sources */,
 				963DB6CF1A92160100B72CA5 /* PurchaseD.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +399,11 @@
 			isa = PBXTargetDependency;
 			target = 963DB6C21A92160100B72CA5 /* PurchaseD */;
 			targetProxy = 963DB6E01A92160100B72CA5 /* PBXContainerItemProxy */;
+		};
+		96F6BEB61B36FE2400CDB62B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GTLTouchStaticLib;
+			targetProxy = 96F6BEB51B36FE2400CDB62B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -346,20 +506,58 @@
 		963DB6EA1A92160100B72CA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../GoogleDriveAPI 2/Source\"/**",
+				);
 				INFOPLIST_FILE = PurchaseD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/office/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../GoogleDriveAPI 2/Source\"/**";
 			};
 			name = Debug;
 		};
 		963DB6EB1A92160100B72CA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../GoogleDriveAPI 2/Source\"/**",
+				);
 				INFOPLIST_FILE = PurchaseD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/office/google-api-objectivec-client-read-only/Source/build/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../GoogleDriveAPI 2/Source\"/**";
 			};
 			name = Release;
 		};
@@ -416,6 +614,7 @@
 				963DB6EB1A92160100B72CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		963DB6EC1A92160100B72CA5 /* Build configuration list for PBXNativeTarget "PurchaseDTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +623,7 @@
 				963DB6EE1A92160100B72CA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -431,9 +631,10 @@
 		963DB6CD1A92160100B72CA5 /* PurchaseD.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				964BA9C21A9B1017004F6585 /* PurchaseD 2.xcdatamodel */,
 				963DB6CE1A92160100B72CA5 /* PurchaseD.xcdatamodel */,
 			);
-			currentVersion = 963DB6CE1A92160100B72CA5 /* PurchaseD.xcdatamodel */;
+			currentVersion = 964BA9C21A9B1017004F6585 /* PurchaseD 2.xcdatamodel */;
 			path = PurchaseD.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

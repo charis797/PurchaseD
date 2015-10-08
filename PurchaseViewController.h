@@ -14,6 +14,5 @@
 #import "ReceiverViewController.h"
 
 @interface PurchaseViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
--(BOOL)isAuthorized;
 
 @end

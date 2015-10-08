@@ -153,11 +153,4 @@ double person_identifier;
 
 }
 
-
-//let today = self.datePicker.date
-//let dateFormatter = NSDateFormatter()
-//dateFormatter.dateFormat = "d MMM yyyy"
-//let stringDate = dateFormatter.stringFromDate(today)
-//self.textFieldDate.text = stringDate
-
 @end

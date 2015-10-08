@@ -13,21 +13,13 @@
 #import "AddNewPurchaseViewController.h"
 #import "CardViewController.h"
 #import "ReceiverViewController.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-#import "GTMOAuth2ViewControllerTouch.h"
-#import "GTLDrive.h"
-#import <MobileCoreServices/MobileCoreServices.h>
 
-static NSString *const kKeychainItemName = @"PurchaseD";
-static NSString *const kClientID = @"76868206957-m0qlrlcev7j8gsiiqkg0913e9eg9fllm.apps.googleusercontent.com";
-static NSString *const kClientSecret = @"10UtX9AAoLljMVaBqMREw-Fu";
-
-@interface PurchaseViewController ()
-
+@interface PurchaseViewController () <MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewList;
 @property (strong, nonatomic) NSMutableArray *arrayItems;
-@property (nonatomic, retain) GTLServiceDrive *driveService;
 
 @end
 
@@ -40,11 +32,6 @@ static NSString *const kClientSecret = @"10UtX9AAoLljMVaBqMREw-Fu";
     self.arrayItems = [[NSMutableArray alloc] init];
     
     // Initialize the drive service & load existing credentials from the keychain if available
-    self.driveService = [[GTLServiceDrive alloc] init];
-    self.driveService.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
-    clientID:kClientID
-    clientSecret:kClientSecret];
-    //www.oodlestechnologies.com/blogs/Google-Drive-integration-in-Native-iOS#sthash.N2mXirXR.dpuf
 }
 
 - (void)didReceiveMemoryWarning {
@@ -157,7 +144,7 @@ static NSString *const kClientSecret = @"10UtX9AAoLljMVaBqMREw-Fu";
     NSDate *purchaseDate = [dictionaryPurchaseDetails valueForKey:@"date"];
     if (purchaseDate != nil) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"d MM yyyy";
+        dateFormatter.dateFormat = @"d MMM yyyy";
         NSString *stringDate = [dateFormatter stringFromDate:purchaseDate];
         if (stringDate != nil) {
             tableViewCellPurchase.labelDate.text = stringDate;
@@ -219,165 +206,111 @@ static NSString *const kClientSecret = @"10UtX9AAoLljMVaBqMREw-Fu";
         [self.tableViewList deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
--(void)fetchData {
-//    UIDataDetectorTypeAll *dataFetch = [[UIDataDetectorTypeAll alloc] init];
-}
-#pragma mark - Viewdidapper methods
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    // Always display the camera UI.
-////    [self showCamera];
-//}
-//- (void)showData {
-//    
-//}
-//- (void)showCamera
-//{
-//    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-//    {
-//        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    }
-//    else
-//    {
-//        // In case we're running the iPhone simulator, fall back on the photo library instead.
-//        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-//        {
-//            [self showAlert:@"Error" message:@"Sorry, iPad Simulator not supported!"];
-//            return;
-//        }
-//    };
-//    cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-//    cameraUI.allowsEditing = YES;
-//    cameraUI.delegate = self;
-//    [self presentModalViewController:cameraUI animated:YES];
-//    
-//    if (![self isAuthorized])
-//    {
-//        // Not yet authorized, request authorization and push the login UI onto the navigation stack.
-//        [cameraUI pushViewController:[self createAuthController] animated:YES];
-//    }
-//}
-
-// Handle selection of an image
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-//{
-//    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-//    [self dismissModalViewControllerAnimated:YES];
-//    [self uploadPhoto:image];
-//}
-//
-//// Handle cancel from image picker/camera.
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-//{
-//    [self dismissModalViewControllerAnimated:YES];
-//}
-
-// Helper to check if user is authorized
-- (BOOL)isAuthorized
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
-    return [((GTMOAuth2Authentication *)self.driveService.authorizer) canAuthorize];
-}
-//
-//// Creates the auth controller for authorizing access to Google Drive.
-- (GTMOAuth2ViewControllerTouch *)createAuthController
-{
-    GTMOAuth2ViewControllerTouch *authController;
-    authController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
-                                                                clientID:kClientID
-                                                            clientSecret:kClientSecret
-                                                        keychainItemName:kKeychainItemName
-                                                                delegate:self
-                                                        finishedSelector:@selector(viewController:finishedWithAuth:error:)];
-    return authController;
-}
-
-// Handle completion of the authorization process, and updates the Drive service
-// with the new credentials.
-- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
-      finishedWithAuth:(GTMOAuth2Authentication *)authResult
-                 error:(NSError *)error
-{
-    if (error != nil)
+    // Notifies users about errors associated with the interface
+    switch (result)
     {
-        [self showAlert:@"Authentication Error" message:error.localizedDescription];
-        self.driveService.authorizer = nil;
+        case MFMailComposeResultCancelled:
+            NSLog(@"Result: canceled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Result: saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Result: sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Result: failed");
+            break;
+        default:
+            NSLog(@"Result: not sent");
+            break;
     }
-    else
-    {
-        self.driveService.authorizer = authResult;
-    }
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
-//
-//// Uploads a photo to Google Drive
-//- (void)uploadPhoto:(UIImage*)image
-//{
-//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-//    [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
-//    
-//    GTLDriveFile *file = [GTLDriveFile object];
-//    file.title = [dateFormat stringFromDate:[NSDate date]];
-//    file.descriptionProperty = @"Uploaded from the Google Drive iOS Quickstart";
-//    file.mimeType = @"image/png";
-//    
-//    NSData *data = UIImagePNGRepresentation((UIImage *)image);
-//    GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithData:data MIMEType:file.mimeType];
-//    GTLQueryDrive *query = [GTLQueryDrive queryForFilesInsertWithObject:file
-//                                                       uploadParameters:uploadParameters];
-//    
-//    UIAlertView *waitIndicator = [self showWaitIndicator:@"Uploading to Google Drive"];
-//    
-//    [self.driveService executeQuery:query
-//                  completionHandler:^(GTLServiceTicket *ticket,
-//                                      GTLDriveFile *insertedFile, NSError *error) {
-//                      [waitIndicator dismissWithClickedButtonIndex:0 animated:YES];
-//                      if (error == nil)
-//                      {
-//                          NSLog(@"File ID: %@", insertedFile.identifier);
-//                          [self showAlert:@"Google Drive" message:@"File saved!"];
-//                      }
-//                      else
-//                      {
-//                          NSLog(@"An error occurred: %@", error);
-//                          [self showAlert:@"Google Drive" message:@"Sorry, an error occurred!"];
-//                      }
-//                  }];
-//}
-//
-//// Helper for showing a wait indicator in a popup
-- (UIAlertView*)showWaitIndicator:(NSString *)title
+-(void)displayComposerSheet
 {
-    UIAlertView *progressAlert;
-    progressAlert = [[UIAlertView alloc] initWithTitle:title
-                                               message:@"Please wait..."
-                                              delegate:nil
-                                     cancelButtonTitle:nil
-                                     otherButtonTitles:nil];
-    [progressAlert show];
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    [picker setSubject:@"PurchaseD"];
     
-    UIActivityIndicatorView *activityView;
-    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    activityView.center = CGPointMake(progressAlert.bounds.size.width / 2,
-                                      progressAlert.bounds.size.height - 45);
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSString *stringExportData = @"";
+    NSManagedObjectContext *context =
+    [appDelegate managedObjectContext];
     
-    [progressAlert addSubview:activityView];
-    [activityView startAnimating];
-    return progressAlert;
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Purchases"
+                inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+    NSArray *fetchedObjects = [context executeFetchRequest:request error:nil];
+    if(fetchedObjects
+       && [fetchedObjects isKindOfClass:[NSArray class]]
+       && fetchedObjects.count > 0) {
+        stringExportData = [stringExportData stringByAppendingFormat:@"Description, Card, Amount, Person, Date \n"];
+
+        
+        for (NSDictionary *dictionaryPurchaseDetails in fetchedObjects) {
+            stringExportData = [stringExportData stringByAppendingString:[dictionaryPurchaseDetails valueForKey:@"purchasedescription"]];
+            stringExportData = [stringExportData stringByAppendingString:@","];
+            
+            NSManagedObjectContext *context = [appDelegate managedObjectContext];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Cards"];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"card_identifier == %@", [dictionaryPurchaseDetails valueForKey:@"card_identifier"]];
+            fetchRequest.predicate = predicate;
+            NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:nil];
+            if (fetchedObjects
+                && [fetchedObjects isKindOfClass:[NSArray class]]
+                && fetchedObjects.count > 0) {
+                NSManagedObject *object = fetchedObjects.lastObject;
+                
+                stringExportData = [stringExportData stringByAppendingFormat:@"%@,", [object valueForKey:@"name"]];
+            }
+            stringExportData = [stringExportData stringByAppendingFormat:@"%@,", [dictionaryPurchaseDetails valueForKey:@"amount"]];
+
+            
+            
+            NSFetchRequest *fetchRequestPerson = [NSFetchRequest fetchRequestWithEntityName:@"Receiver"];
+            NSPredicate *predicatePerson = [NSPredicate predicateWithFormat:@"person_identifier == %@", [dictionaryPurchaseDetails valueForKey:@"person_identifier"]];
+            fetchRequestPerson.predicate = predicatePerson;
+            NSArray *fetchedObjectsPerson = [context executeFetchRequest:fetchRequestPerson error:nil];
+            if (fetchedObjects
+                && [fetchedObjectsPerson isKindOfClass:[NSArray class]]
+                && fetchedObjectsPerson.count > 0) {
+                NSManagedObject *object = fetchedObjectsPerson.lastObject;
+                
+                stringExportData = [stringExportData stringByAppendingFormat:@"%@,", [object valueForKey:@"name"]];
+                
+                NSDate *purchaseDate = [dictionaryPurchaseDetails valueForKey:@"date"];
+                if (purchaseDate != nil) {
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    dateFormatter.dateFormat = @"d MMM yyyy";
+                    NSString *stringDate = [dateFormatter stringFromDate:purchaseDate];
+                    if (stringDate != nil) {
+                        stringExportData = [stringExportData stringByAppendingFormat:@"%@,", stringDate];
+                    }
+                }
+                
+            }
+            stringExportData = [stringExportData stringByAppendingString:@"\n"];
+        }
+        
+    }
+    NSData *myData = [stringExportData dataUsingEncoding:NSASCIIStringEncoding];
+    [picker addAttachmentData:myData mimeType:@"Purchase" fileName:@"PurchaseD.csv"];
+    
+    // Fill out the email body text
+    NSString *emailBody = @"My purchase is attached";
+    [picker setMessageBody:emailBody isHTML:NO];
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
-// Helper for showing an alert
-- (void)showAlert:(NSString *)title message:(NSString *)message
-{
-    UIAlertView *alert;
-    alert = [[UIAlertView alloc] initWithTitle: title
-                                       message: message
-                                      delegate: nil
-                             cancelButtonTitle: @"OK"
-                             otherButtonTitles: nil];
-    [alert show];
+- (IBAction)exportClicked:(id)sender {
+    [self displayComposerSheet];
 }
-////www.oodlestechnologies.com/blogs/Google-Drive-integration-in-Native-iOS#sthash.N2mXirXR.dpuf
 
 @end

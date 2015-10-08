@@ -23,22 +23,12 @@
     self.title = @"Persons";
     // Do any additional setup after loading the view.
     self.arrayItems = [[NSMutableArray alloc] init];
-    self.navigationItem.leftBarButtonItem = [self editButtonItem];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"UpdateReceiver"]) {
-        NSManagedObject *selectedReceiver = [self.arrayItems objectAtIndex:[[self.tableViewList indexPathForSelectedRow] row]];
-        UpdateReceiverViewController *updateReceiverViewController = segue.destinationViewController;
-        updateReceiverViewController.receiverName = selectedReceiver;
-    }
 }
 
 #pragma mark - UITableViewDelegate method

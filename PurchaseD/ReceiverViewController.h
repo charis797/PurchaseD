@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "AddNewPurchaseViewController.h"
 #import "AppDelegate.h"
-#import "UpdateReceiverViewController.h"
 @interface ReceiverViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) UpdateReceiverViewController *updateReceiverViewController;
 @property (strong, nonatomic) AddNewPurchaseViewController *addNewPurchaseViewController;
 
 @end
